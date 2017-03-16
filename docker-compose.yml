@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  rails:
+    build: .
+    container_name: contacts
+    command: ./init.sh
+    env_file: .env
+    restart: 'no'
+    volumes:
+      - .:/app
+    ports:
+      - '4000:4000'
+    networks:
+      - tc
+
+networks:
+  tc:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.240.0/24
+        gateway: 172.16.240.1
