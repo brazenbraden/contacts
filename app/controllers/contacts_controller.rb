@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    @contact = ContactRepository.new
   end
 
   # GET /contacts/1/edit
@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
 
   # POST /contacts
   def create
-    @contact = Contact.new(contact_params)
+    @contact = ContactRepository.new(contact_params)
 
     if @contact.save
       redirect_to @contact, notice: 'Contact was successfully created.'
@@ -48,7 +48,7 @@ class ContactsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
-      @contact = Contact.find(params[:id])
+      @contact = ContactRepository.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
