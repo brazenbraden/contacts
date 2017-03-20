@@ -14,6 +14,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml-rails', '~> 0.9'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'simple_form', '3.4.0'
+gem 'virtus', '1.0.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
