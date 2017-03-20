@@ -1,0 +1,17 @@
+%h1 Listing contacts
+
+%table.table
+  %thead
+    %tr
+      %th First name
+      %th Last name
+
+  %tbody
+    - @contacts.each do |contact|
+      %tr
+        %td= contact.first_name
+        %td= contact.last_name
+
+%br
+
+= link_to 'New Contact', new_contact_path
